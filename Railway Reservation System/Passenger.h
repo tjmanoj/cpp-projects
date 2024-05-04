@@ -13,6 +13,7 @@ private:
 
 public:
     Passenger() : id(""), name(""), age(0), gender(' '), berth(' ') {}
+    
     //Setter functions
 
     void setId(int passenger_count);
