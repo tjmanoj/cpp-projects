@@ -3,13 +3,13 @@
 #include "Passenger.h"
 using namespace std;
 
-#define total_tickets 91
-#define total_confirmed_tickets 63
-#define total_rac_tickets 18
-#define total_waiting_tickets 10
-#define total_lower_berths 21
-#define total_middle_berths 21
-#define total_upper_berths 21
+#define total_tickets 7
+#define total_confirmed_tickets 5
+#define total_lower_berths 2
+#define total_middle_berths 2
+#define total_upper_berths 1
+#define total_rac_tickets 1
+#define total_waiting_tickets 1
 
 class Ticket
 {
@@ -26,5 +26,15 @@ public:
 	void AllocateTicket(Passenger &p, char &berth);
 
 	bool checkTicketsAvailable();
+
+	void PrintAvailableTickets();
+
+	void CancelTicket(deque<pair<string, Passenger>>& confirmed_tickets);
+
+	void DecrementTickets(string ticketId);
+
+	void ReorderRackTickets(deque<pair<string, Passenger>>& confirmed_tickets, char &berth);
+	void ReorderWaitingTickets(deque<pair<string, Passenger>>& confirmed_tickets, char &berth);
+
 };
 

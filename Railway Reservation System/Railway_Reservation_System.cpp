@@ -35,11 +35,18 @@ int main()
         case 1:
             t.BookTicket(p, confirmed_tickets);
             break;
+        
+        case 2:
+            t.CancelTicket(confirmed_tickets);
+            break;
 
         case 3:
             t.PrintBookedTickets(confirmed_tickets);
             break;
 
+        case 4:
+            t.PrintAvailableTickets();
+            break;
         case 5:
             cout << "Thank You !!" << endl;
             Sleep(1000);
@@ -47,6 +54,7 @@ int main()
 
         default:
             cout << "Enter valid choice!" << endl;
+            _getch();
             break;
         }
         
