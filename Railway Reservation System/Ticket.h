@@ -31,7 +31,7 @@ public:
 
 	void CancelTicket(deque<pair<string, Passenger>>& confirmed_tickets);
 
-	void DecrementTickets(string ticketId);
+	void DecrementTickets(char berth);
 
 	void ReorderRackTickets(deque<pair<string, Passenger>>& confirmed_tickets, char &berth);
 	void ReorderWaitingTickets(deque<pair<string, Passenger>>& confirmed_tickets, char &berth);

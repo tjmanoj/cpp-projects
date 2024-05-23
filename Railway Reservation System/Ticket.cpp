@@ -231,8 +231,9 @@ void Ticket::CancelTicket(deque<pair<string, Passenger>>& confirmed_tickets) {
     while (it != confirmed_tickets.end()) {
         if (it->first == id) {
             found = true;
-            berth = it->first[1];
-            DecrementTickets(it->first);
+            int len = it->first.size();     // entracting the last letter from the ticket id to berth
+            berth = it->first[len-1];
+            DecrementTickets(berth);
             confirmed_tickets.erase(it);
             cout << "Ticket Cancelled Successfully!" << endl;
             break;
@@ -245,23 +246,23 @@ void Ticket::CancelTicket(deque<pair<string, Passenger>>& confirmed_tickets) {
     _getch();
 }
 
-void Ticket::DecrementTickets(string ticketId) {
-    if (ticketId[1] == 'L') {
+void Ticket::DecrementTickets(char berth) {
+    if (berth == 'L') {
         this->lower_berth_tickets -= 1;
         this->confirmed_tickets -= 1;
     }
-    else if (ticketId[1] == 'M') {
+    else if (berth == 'M') {
         this->middle_berth_tickets -= 1;
         this->confirmed_tickets -= 1;
     }
-    else if (ticketId[1] == 'U') {
+    else if (berth == 'U') {
         this->upper_berth_tickets -= 1;
         this->confirmed_tickets -= 1;
     }
-    else if (ticketId[1] == 'R') {
+    else if (berth == 'R') {
         this->rac_tickets -= 1;
     }
-    else if (ticketId[1] == 'W') {
+    else if (berth == 'W') {
         this->waiting_tickets -= 1;
     }
 }
