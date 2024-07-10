@@ -1,7 +1,6 @@
 #pragma once
 #include<unordered_map>
 #include "Customer.hpp"
-#include "GiftCard.hpp"
 
 class Login
 {
@@ -15,5 +14,15 @@ public:
 	void DisplayCustomerDetails(Customer &cus);
 	void LoginPage(Customer &cus);
 	void DisplayOptions();
+
+	void generateGiftCard(Customer& cus);
+
+	void Purchase(unordered_map<int, Customer>& db);
+
+	void BlockCard(Customer& cus);
+
+	void TopUp(Customer& cus);
+
+	void DisplayHistory(Customer& cus);
 };
 

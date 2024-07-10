@@ -45,7 +45,9 @@ int main() {
 				break;
 			
 			case 2:
-				cout << "HU";
+				Login l1;
+				l1.Purchase(db);
+				_getch();
 				break;
 
 			case 3:

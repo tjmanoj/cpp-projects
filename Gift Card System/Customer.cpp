@@ -22,12 +22,45 @@ string Customer::getPassword() {
 };
 
 
-//void Customer::updateGiftCardStatus(bool status) {
-//	this->isGiftCard = true;
-//}
-//
-//void Customer::updategiftcard(int& cardNumber, int& PIN, float& amt) {
-//	this->gift.setCardNumber(cardNumber);
-//	this->gift.setPin(PIN);
-//	this->gift.setBalance(amt);
-//}
+void Customer::updateGiftCardStatus(bool status) {
+	this->isgift = status;
+}
+
+void Customer::updategiftcard(int& cardNumber, int& PIN, float& amt) {
+	this->giftCardNum = cardNumber;
+	this->PIN = PIN;
+	this->giftbalance = amt;
+}
+
+
+int Customer::getGiftCardNum() {
+	return this->giftCardNum;
+}
+
+int Customer::getPin() {
+	return this->PIN;
+}
+
+float Customer::getGiftbalance() {
+	return this->giftbalance;
+}
+
+void Customer::updateBalance(float amt) {
+	this->balance = amt;
+}
+
+void Customer::updateGiftBalance(float amt) {
+	this->giftbalance = amt;
+}
+
+bool Customer::getisgift() {
+	return this->isgift;
+}
+
+void Customer::updateHistory(float amt, string mode,float final) {
+	this->history.push_back({ { amt,mode } ,final});
+}
+
+vector<pair<pair<float, string>, float>> Customer::getHistory() {
+	return this->history;
+}
